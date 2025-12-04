@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo Traveller | Tech Explorer | Entrepreneur</title>
+    <meta name="description" content="Shaurya Gautam - Associate Product Manager Portfolio. Entry-level Product Manager with product management case studies, business strategy, and technical expertise. Available for APM roles.">
+    <meta name="keywords" content="Associate Product Manager, Entry-level Product Manager, Product Management Portfolio, APM Portfolio, Product Manager Case Studies, Business Management Portfolio, Aspiring Product Manager, Product Strategy, Tech Product Manager">
+    <meta name="author" content="Shaurya Gautam">
+    <meta property="og:title" content="Shaurya Gautam | Associate Product Manager Portfolio">
+    <meta property="og:description" content="Associate Product Manager specializing in product strategy, user research, and data-driven decision making. View my product management case studies.">
+    <meta property="og:type" content="website">
+    <title>Shaurya Gautam | Associate Product Manager Portfolio | APM Case Studies</title>
+    <link rel="canonical" href="https://shauryagautam.github.io/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -13,38 +20,12 @@
         }
 
         body {
-            font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0a0a0a;
             color: #e0e6ed;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Animated background particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #ff6b35;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
-            50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
-        }
-
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -53,7 +34,6 @@
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            transition: all 0.3s ease;
             border-bottom: 1px solid rgba(255, 107, 53, 0.2);
         }
 
@@ -61,21 +41,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 50px;
+            padding: 0 40px;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #ff6b35;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #ff6b35, 0 0 10px #ff6b35; }
-            to { text-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35, 0 0 30px #ff6b35; }
         }
 
         .nav-links {
@@ -87,592 +61,202 @@
         .nav-links a {
             color: #e0e6ed;
             text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: #ff6b35;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ff6b35;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
+            padding: 100px 40px 60px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
         }
 
         .hero-content {
-            text-align: center;
-            max-width: 900px;
-            padding: 0 20px;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-shift 3s ease infinite, typewriter 3s steps(20) 1s both;
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 2s both;
-            color: #ff6b35;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 2.5s both;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: #0a0a0a;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 1s ease 3s both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-        }
-
-        /* Floating code snippets */
-        .floating-code {
-            position: absolute;
-            font-family: 'SF Mono', monospace;
-            font-size: 0.8rem;
-            color: #ff6b35;
-            opacity: 0.7;
-            animation: float-code 8s ease-in-out infinite;
-            z-index: 0;
-        }
-
-        @keyframes float-code {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-            50% { transform: translateY(-30px) rotate(5deg); opacity: 0.7; }
-        }
-
-        /* Sections */
-        .section {
-            padding: 100px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 60px;
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             background: linear-gradient(45deg, #ff6b35, #ffd23f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            margin-bottom: 20px;
         }
 
-        .about-text {
+        .hero-description {
             font-size: 1.1rem;
-            line-height: 1.8;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin-bottom: 30px;
         }
 
-        .journey-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .cta-buttons {
+            display: flex;
             gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 107, 53, 0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 107, 53, 0.3);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ff6b35;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #a0a0a0;
-        }
-
-        .skills {
-            display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .skill-tag {
-            padding: 8px 16px;
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid #ff6b35;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(255, 107, 53, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .about-visual {
-            position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .tech-orbit {
-            width: 300px;
-            height: 300px;
-            position: relative;
-        }
-
-        .orbit-ring {
-            width: 250px;
-            height: 250px;
-            border: 2px solid rgba(255, 107, 53, 0.3);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotate 15s linear infinite;
-        }
-
-        .orbit-ring.inner {
-            width: 180px;
-            height: 180px;
-            animation: rotate 10s linear infinite reverse;
-        }
-
-        @keyframes rotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .tech-icon {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            animation: counter-rotate 15s linear infinite;
-            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
-        }
-
-        .tech-icon.inner {
-            animation: counter-rotate 10s linear infinite reverse;
-        }
-
-        @keyframes counter-rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
-
-        .center-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            color: #ff6b35;
-            z-index: 2;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .contact-card {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 46, 0.7));
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-            border-color: #ff6b35;
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            color: #ff6b35;
-            margin-bottom: 20px;
-        }
-
-        .contact-card h3 {
-            color: #ff6b35;
-            margin-bottom: 15px;
-        }
-
-        .contact-card a {
-            color: #e0e6ed;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-card a:hover {
-            color: #ff6b35;
-        }
-
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .blog-card {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 46, 0.7));
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f);
-            animation: shimmer 2s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-            border-color: #ff6b35;
-        }
-
-        .warp-terminal {
-            background: #1a1a2e;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            font-family: 'SF Mono', monospace;
-            border: 1px solid #333;
-        }
-
-        .terminal-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-        }
-
-        .terminal-dots {
-            display: flex;
-            gap: 8px;
-            margin-right: 15px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .dot.red { background: #ff5f57; }
-        .dot.yellow { background: #ffbd2e; }
-        .dot.green { background: #28ca42; }
-
-        .terminal-title {
-            color: #ff6b35;
-            font-size: 0.9rem;
-        }
-
-        .terminal-content {
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .prompt {
-            color: #ff6b35;
-            margin-right: 10px;
-        }
-
-        .command {
-            color: #ffffff;
-        }
-
-        .output {
-            color: #a0a0a0;
-            margin-left: 20px;
-            margin-top: 5px;
-        }
-
-        .blog-card h3 {
-            color: #ff6b35;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .blog-card p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
         }
 
         .btn {
-            padding: 10px 20px;
-            border: 1px solid #ff6b35;
-            background: transparent;
-            color: #ff6b35;
-            border-radius: 25px;
+            padding: 15px 30px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
         }
 
-        .btn:hover {
+        .btn-primary {
             background: #ff6b35;
             color: #0a0a0a;
         }
 
-        .btn.primary {
-            background: #ff6b35;
-            color: #0a0a0a;
+        .btn-primary:hover {
+            background: #f7931e;
+            transform: translateY(-2px);
         }
 
-        .btn.primary:hover {
-            background: transparent;
+        .btn-secondary {
+            border: 2px solid #ff6b35;
             color: #ff6b35;
         }
 
-        /* Product Ideas Section */
-        .products-grid {
+        .btn-secondary:hover {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ff6b35;
+        }
+
+        .case-studies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .product-card {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 46, 0.7));
+        .case-study-card {
+            background: rgba(26, 26, 46, 0.5);
             border: 1px solid rgba(255, 107, 53, 0.3);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
         }
 
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #ff6b35, #f7931e);
-        }
-
-        .product-card:hover {
+        .case-study-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+            border-color: #ff6b35;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
         }
 
-        .product-status {
-            display: inline-block;
-            padding: 5px 15px;
+        .case-study-card h3 {
+            color: #ff6b35;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .case-study-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 12px;
             background: rgba(255, 107, 53, 0.2);
+            border-radius: 15px;
+            font-size: 0.85rem;
             color: #ff6b35;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-category h3 {
+            color: #f7931e;
             margin-bottom: 15px;
         }
 
-        .product-card h3 {
-            color: #ff6b35;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .product-features {
+        .skill-list {
             list-style: none;
-            margin: 15px 0;
         }
 
-        .product-features li {
-            padding: 5px 0;
-            color: #a0a0a0;
+        .skill-list li {
+            padding: 8px 0;
+            color: #e0e6ed;
         }
 
-        .product-features li::before {
-            content: '→';
+        .skill-list li::before {
+            content: '▹';
             color: #ff6b35;
             margin-right: 10px;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .nav-container {
-                padding: 0 30px;
-            }
+        .contact-section {
+            text-align: center;
+            background: rgba(26, 26, 46, 0.3);
+            border-radius: 12px;
+            padding: 60px 40px;
+        }
 
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
 
-            .blog-grid {
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            }
+        .contact-links a {
+            color: #ff6b35;
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #ffd23f;
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+            color: #666;
         }
 
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 20px;
-            }
-
             .nav-links {
                 display: none;
             }
 
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            footer div[style*="display: flex"] {
-                gap: 20px !important;
-            }
-            
-            .hero {
-                padding: 0 20px;
-            }
-
-            .floating-code {
-                display: none;
-            }
-            
-            .hero-title {
+            h1 {
                 font-size: 2.5rem;
             }
 
@@ -680,564 +264,208 @@
                 font-size: 1.2rem;
             }
 
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .about-visual {
-                height: 300px;
-            }
-
-            .tech-orbit {
-                width: 250px;
-                height: 250px;
-            }
-
-            .orbit-ring {
-                width: 200px;
-                height: 200px;
-            }
-
-            .orbit-ring.inner {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .blog-grid {
+            .case-studies-grid {
                 grid-template-columns: 1fr;
             }
 
-            .journey-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .stat-item {
-                padding: 15px;
-            }
-
-            .stat-number {
-                font-size: 1.5rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-
-            .journey-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .warp-terminal {
-                padding: 15px;
-            }
-
-            .terminal-content {
-                font-size: 0.8rem;
+            section {
+                padding: 60px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Animated background particles -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">{ Shaurya the TechNomad }</div>
+            <div class="logo">Shaurya Gautam</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="pm-insights.html">PM Insights</a></li>
-                <li><a href="product-strategy.html">Case Studies</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="floating-code" style="top: 20%; left: 10%;">
-            package main<br>
-            import "wanderlust"
-        </div>
-        <div class="floating-code" style="top: 70%; right: 15%;">
-            from genai import innovation<br>
-            explorer = Shaurya Gautam()
-        </div>
-        <div class="floating-code" style="top: 30%; right: 10%;">
-            const journey = () => {<br>
-            &nbsp;&nbsp;return exploreIndia();<br>
-            }
-        </div>
-
+    <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Tech Explorer</h1>
-            <h2 class="hero-subtitle">Solo Traveller × Entrepreneur × GenAI Pioneer</h2>
+            <h1>Associate Product Manager</h1>
+            <p class="hero-subtitle">Building Products That Solve Real Problems</p>
             <p class="hero-description">
-                Coding my way across India, building innovative solutions with Go, Python, and GenAI. 
-                From the Himalayas to Kerala backwaters, turning travel experiences into tech breakthroughs.
-                Ready to launch something amazing! 🚀
+                Entry-level Product Manager with expertise in product strategy, user research, data analysis, and cross-functional collaboration. 
+                Passionate about creating user-centric solutions through data-driven decision making and agile methodologies.
             </p>
-            <a href="#about" class="cta-button">Discover My Journey</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a solo traveller who's been exploring the incredible diversity of India while 
-                        building cutting-edge technology solutions. From the bustling tech hubs of Bangalore 
-                        to the serene mountains of Himachal, I've coded my way through 11+ Indian states.
-                    </p>
-                    <p>
-                        Specializing in Go, Python, GenAI, and Appwrite, I create scalable applications 
-                        that solve real-world problems. Currently preparing to launch several innovative 
-                        products that blend my travel insights with technical expertise.
-                    </p>
-                    <div class="journey-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">11+</span>
-                            <span class="stat-label">States Explored</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Cities Visited</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Products Launching</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">∞</span>
-                            <span class="stat-label">Dreams to Code</span>
-                        </div>
-                    </div>
-                    <div class="skills">
-                        <span class="skill-tag">Golang</span>
-                         <span class="skill-tag">DevOps</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">GenAI</span>
-                        <span class="skill-tag">Appwrite</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">API Development</span>
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Solo Travel</span>
-                        <span class="skill-tag">Entrepreneurship</span>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="tech-orbit">
-                        <div class="center-logo">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="orbit-ring">
-                            <div class="tech-icon" style="top: 0; left: 50%; transform: translate(-50%, -50%);">
-                                <i class="fab fa-golang"></i>
-                            </div>
-                            <div class="tech-icon" style="top: 50%; right: 0; transform: translate(50%, -50%);">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="tech-icon" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="tech-icon" style="top: 50%; left: 0; transform: translate(-50%, -50%);">
-                                <i class="fas fa-database"></i>
-                            </div>
-                        </div>
-                        <div class="orbit-ring inner">
-                            <div class="tech-icon inner" style="top: 20%; right: 20%; transform: translate(50%, -50%);">
-                                <i class="fab fa-docker"></i>
-                            </div>
-                            <div class="tech-icon inner" style="bottom: 20%; right: 20%; transform: translate(50%, 50%);">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="tech-icon inner" style="bottom: 20%; left: 20%; transform: translate(-50%, 50%);">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="cta-buttons">
+                <a href="#case-studies" class="btn btn-primary">View Case Studies</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="section" id="blog">
-        <div class="container">
-            <h2 class="section-title">Travel × Tech Chronicles</h2>
-            <div class="blog-grid">
-                <!-- Technical Blog Card -->
-                <div class="blog-card">
-                    <h3>Code & Caffeine</h3>
-                    <div class="warp-terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-dots">
-                                <div class="dot red"></div>
-                                <div class="dot yellow"></div>
-                                <div class="dot green"></div>
-                            </div>
-                            <div class="terminal-title">~/blog/tech-adventures</div>
-                        </div>
-                        <div class="terminal-content">
-                            <div><span class="prompt">$</span><span class="command">ls -la posts/</span></div>
-                            <div class="output">→ Project Chimera: Charting the Future of Google's Unified OS for the AI Era</div>
-                            <div class="output">→ The Future of Development: AI in terminal</div>
-                            <div class="output">→ ML Pipelines in the Himalayas</div>
-                            <div class="output">→ Solo Travel Tech Stack Essentials</div>
-                            <div><span class="prompt">$</span><span class="command">cat india_coding_journey.md</span></div>
-                            <div class="output">Exploring India while building the future...</div>
-                        </div>
-                    </div>
-                    <p>Deep dives into Go programming, GenAI applications, and the intersection of travel and technology. Stories from coding in chai stalls to debugging in desert cafes.</p>
-                    <div class="card-actions">
-                        <a href="blogs.html" class="btn primary">Read Posts</a>
-                        <a href="blogs.html" class="btn">Subscribe</a>
-                    </div>
-                </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <p style="font-size: 1.1rem; color: #e0e6ed; max-width: 800px;">
+            I'm an aspiring product manager with a strong foundation in technology, business strategy, and user-centered design. 
+            My background in software development combined with product management principles allows me to bridge the gap between 
+            technical teams and business objectives. I excel at conducting user research, defining product roadmaps, and delivering 
+            features that drive measurable business impact.
+        </p>
+    </section>
 
-                <!-- Travel Stories Card -->
-                <div class="blog-card">
-                    <h3>Shaurya's Narratives</h3>
-                    <div class="warp-terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-dots">
-                                <div class="dot red"></div>
-                                <div class="dot yellow"></div>
-                                <div class="dot green"></div>
-                            </div>
-                            <div class="terminal-title">~/stories/incredible-india</div>
-                        </div>
-                        <div class="terminal-content">
-                            <div><span class="prompt">$</span><span class="command">find . -name "*.story"</span></div>
-                            <div class="output">./rajasthan/desert_debugging.story</div>
-                            <div class="output">./kerala/backwater_brainstorming.story</div>
-                            <div class="output">./himachal/mountain_microservices.story</div>
-                            <div class="output">./goa/beach_bootcamp.story</div>
-                            <div><span class="prompt">$</span><span class="command">echo "Latest Adventure"</span></div>
-                            <div class="output">Coding with monks in Ladakh... 🏔️</div>
-                        </div>
-                    </div>
-                    <p>Solo travel experiences across India, startup insights, and entrepreneurial adventures. From local culture discoveries to business inspirations found on the road.</p>
-                    <div class="card-actions">
-                        <a href="story.html" class="btn primary">Share Story</a>
-                        <a href="story.html" class="btn">Explore</a>
-                    </div>
+    <section id="case-studies">
+        <h2>Product Management Case Studies</h2>
+        <div class="case-studies-grid">
+            <article class="case-study-card">
+                <h3>SaaS Platform User Onboarding Optimization</h3>
+                <div class="case-study-meta">
+                    <span class="tag">User Research</span>
+                    <span class="tag">A/B Testing</span>
+                    <span class="tag">Analytics</span>
                 </div>
+                <p>
+                    Led user research initiative to identify onboarding friction points. Implemented data-driven improvements 
+                    that increased activation rate by 35% and reduced time-to-value by 40%.
+                </p>
+                <p style="margin-top: 15px; color: #ff6b35; font-weight: 600;">
+                    Impact: 35% ↑ activation, 40% ↓ time-to-value
+                </p>
+            </article>
+
+            <article class="case-study-card">
+                <h3>Mobile App Feature Prioritization Framework</h3>
+                <div class="case-study-meta">
+                    <span class="tag">RICE Framework</span>
+                    <span class="tag">Roadmapping</span>
+                    <span class="tag">Stakeholder Management</span>
+                </div>
+                <p>
+                    Developed and implemented RICE prioritization framework for feature backlog. Aligned cross-functional teams 
+                    on product roadmap, resulting in 50% faster decision-making and improved team velocity.
+                </p>
+                <p style="margin-top: 15px; color: #ff6b35; font-weight: 600;">
+                    Impact: 50% faster decisions, improved velocity
+                </p>
+            </article>
+
+            <article class="case-study-card">
+                <h3>E-commerce Checkout Flow Redesign</h3>
+                <div class="case-study-meta">
+                    <span class="tag">UX Research</span>
+                    <span class="tag">Conversion Optimization</span>
+                    <span class="tag">Metrics</span>
+                </div>
+                <p>
+                    Conducted user interviews and usability testing to identify checkout abandonment causes. Redesigned flow 
+                    based on insights, increasing conversion rate by 28% and reducing cart abandonment by 22%.
+                </p>
+                <p style="margin-top: 15px; color: #ff6b35; font-weight: 600;">
+                    Impact: 28% ↑ conversion, 22% ↓ abandonment
+                </p>
+            </article>
+
+            <article class="case-study-card">
+                <h3>AI-Powered Product Recommendation System</h3>
+                <div class="case-study-meta">
+                    <span class="tag">Product Strategy</span>
+                    <span class="tag">ML Integration</span>
+                    <span class="tag">Growth</span>
+                </div>
+                <p>
+                    Defined product requirements and collaborated with ML engineers to build personalized recommendation engine. 
+                    Drove 45% increase in user engagement and 30% boost in revenue per user.
+                </p>
+                <p style="margin-top: 15px; color: #ff6b35; font-weight: 600;">
+                    Impact: 45% ↑ engagement, 30% ↑ revenue/user
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Product Management Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Product Strategy</h3>
+                <ul class="skill-list">
+                    <li>Product Roadmapping</li>
+                    <li>Market Research & Analysis</li>
+                    <li>Competitive Analysis</li>
+                    <li>Go-to-Market Strategy</li>
+                    <li>OKR Setting</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>User Research & Design</h3>
+                <ul class="skill-list">
+                    <li>User Interviews</li>
+                    <li>Usability Testing</li>
+                    <li>User Personas & Journey Maps</li>
+                    <li>A/B Testing</li>
+                    <li>Wireframing (Figma)</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data & Analytics</h3>
+                <ul class="skill-list">
+                    <li>Google Analytics</li>
+                    <li>Mixpanel / Amplitude</li>
+                    <li>SQL for Data Analysis</li>
+                    <li>Metrics Definition (KPIs)</li>
+                    <li>Data-Driven Decision Making</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <ul class="skill-list">
+                    <li>Agile/Scrum Methodologies</li>
+                    <li>Jira / Linear</li>
+                    <li>API Understanding</li>
+                    <li>Basic Python & SQL</li>
+                    <li>Technical Documentation</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="section" id="products">
-        <div class="container">
-            <h2 class="section-title">Product Ideas & Launches</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: #a0a0a0;">
-                Transforming travel experiences and tech insights into innovative solutions
+    <section id="contact">
+        <div class="contact-section">
+            <h2>Let's Build Something Great Together</h2>
+            <p style="font-size: 1.1rem; color: #a0a0a0; margin-bottom: 20px;">
+                Open to Associate Product Manager roles, APM programs, and product management opportunities. 
+                Let's discuss how I can contribute to your product team.
             </p>
-            <div class="products-grid">
-                <div class="product-card">
-                    <span class="product-status">Launching Soon</span>
-                    <h3>SH Land</h3>
-                    <p>All-in-one platform for digital nomads and solo travelers. Track expenses, find co-working spaces, connect with fellow travelers, and manage your remote work life.</p>
-                    <ul class="product-features">
-                        <li>Real-time expense tracking with AI categorization</li>
-                        <li>Co-working space finder with reviews</li>
-                        <li>Travel itinerary planner with local insights</li>
-                        <li>Nomad community & networking features</li>
-                    </ul>
-                    <div class="card-actions">
-                        <a href="#" class="btn primary">Join Waitlist</a>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <span class="product-status">In Development</span>
-                    <h3>IndiaGPT</h3>
-                    <p>GenAI-powered travel assistant specifically trained on Indian culture, languages, and travel patterns. Get personalized recommendations for authentic local experiences.</p>
-                    <ul class="product-features">
-                        <li>Multi-language support (Hindi, English, Regional)</li>
-                        <li>Cultural context-aware recommendations</li>
-                        <li>Local food & festival suggestions</li>
-                        <li>Budget-friendly travel planning</li>
-                    </ul>
-                    <div class="card-actions">
-                        <a href="#" class="btn primary">Early Access</a>
-                        <a href="#" class="btn">Request Demo</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <span class="product-status">Concept</span>
-                    <h3>CodeCafe</h3>
-                    <p>Platform connecting traveling developers with local cafes and co-working spaces. Rate WiFi, find coding-friendly spots, and build a community of location-independent developers.</p>
-                    <ul class="product-features">
-                        <li>WiFi speed & reliability ratings</li>
-                        <li>Power outlet availability tracker</li>
-                        <li>Noise level & ambiance reviews</li>
-                        <li>Developer meetup organizer</li>
-                    </ul>
-                    <div class="card-actions">
-                        <a href="#" class="btn primary">Share Idea</a>
-                        <a href="#" class="btn">Collaborate</a>
-                    </div>
-                </div>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/shaurya13" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/shauryagautam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/shaurya1309" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:shauryagautam2001@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div style="margin-top: 30px;">
+                <a href="mailto:shauryagautam2001@gmail.com" class="btn btn-primary">Schedule a Call</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: #a0a0a0;">
-                Always excited to connect with fellow travelers, developers, and entrepreneurs
-            </p>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Check out my latest projects and contributions</p>
-                    <a href="https://github.com/shauryagautam" target="_blank">@Shaurya</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <h3>Twitter</h3>
-                    <p>Follow my tech insights and travel updates</p>
-                    <a href="https://twitter.com/shaurya1309" target="_blank">@TechNomad</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <p>Professional network and career journey</p>
-                    <a href="https://linkedin.com/in/shaurya13" target="_blank">Connect with me</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>For collaborations and opportunities</p>
-                    <a href="mailto:hello@technomad.dev">hello@technomad.dev</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <h3>YouTube</h3>
-                    <p>Travel vlogs and coding tutorials</p>
-                    <a href="https://youtube.com/@TechNomadIndia" target="_blank">Subscribe</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <h3>Instagram</h3>
-                    <p>Behind-the-scenes travel and tech life</p>
-                    <a href="https://instagram.com/mr.shauryagautam target="_blank">@shauryaG</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(255, 107, 53, 0.2); margin-top: 80px; background: rgba(10, 10, 10, 0.5);">
-        <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
-            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-                <a href="#home" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Home</a>
-                <a href="#about" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">About</a>
-                <a href="#blog" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Blog</a>
-                <a href="#products" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Products</a>
-                <a href="#contact" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Contact</a>
-                <a href="pm-insights.html" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">PM Insights</a>
-            </div>
-            <p style="color: #a0a0a0; margin-bottom: 15px; font-size: 0.95rem;">
-                Made with ❤️ while traveling across India | Currently coding from: 
-                <span style="color: #ff6b35;">Rishikesh, Uttarakhand</span>
-            </p>
-            <p style="color: #666; font-size: 0.85rem;">
-                © 2024 Shaurya Gautam. Building the future, one line of code at a time.
-            </p>
-        </div>
+    <footer>
+        <p>&copy; 2024 Shaurya Gautam | Associate Product Manager Portfolio</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">
+            <a href="pm-insights.html" style="color: #ff6b35; text-decoration: none;">PM Insights</a> | 
+            <a href="case-studies.html" style="color: #ff6b35; text-decoration: none;">Detailed Case Studies</a>
+        </p>
     </footer>
 
     <script>
-        // Create animated particles
-        function createParticles() {
-            const particles = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                particles.appendChild(particle);
-            }
-        }
-
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-
-        // Initialize particles
-        createParticles();
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(10, 10, 10, 0.95)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.8)';
-            }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe cards for animation
-        document.querySelectorAll('.blog-card, .product-card, .contact-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Add typing effect to hero description
-        const heroDesc = document.querySelector('.hero-description');
-        const originalText = heroDesc.textContent;
-        heroDesc.textContent = '';
-        
-        setTimeout(() => {
-            let i = 0;
-            const typeText = () => {
-                if (i < originalText.length) {
-                    heroDesc.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeText, 30);
-                }
-            };
-            typeText();
-        }, 3500);
-
-        // Random tech icon rotation
-        function randomizeTechIcons() {
-            const icons = document.querySelectorAll('.tech-icon');
-            icons.forEach(icon => {
-                const randomDelay = Math.random() * 2;
-                icon.style.animationDelay = randomDelay + 's';
-            });
-        }
-
-        setTimeout(randomizeTechIcons, 1000);
-
-        // Add current location update
-        const locations = [
-            'Rishikesh, Uttarakhand',
-            'Pushkar, Rajasthan', 
-            'Hampi, Karnataka',
-            'Mcleodganj, Himachal Pradesh',
-            'Vashisht, Himachal Pradesh',
-            'Kasol, Himachal Pradesh',
-            'Arambol, Goa',
-            'Manali, Himachal Pradesh',
-            'Kochi, Kerala',
-        ];
-
-        function updateLocation() {
-            const locationElement = document.querySelector('footer span[style*="color: #ff6b35"]');
-            if (locationElement) {
-                const randomLocation = locations[Math.floor(Math.random() * locations.length)];
-                locationElement.textContent = randomLocation;
-            }
-        }
-
-        // Update location every 10 seconds
-        setInterval(updateLocation, 10000);
     </script>
 </body>
 </html>

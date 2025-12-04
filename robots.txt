@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://shauryagautam.github.io/sitemap.xml

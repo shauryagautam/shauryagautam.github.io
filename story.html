@@ -198,13 +198,45 @@
             box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
         }
 
+        @media (max-width: 1024px) {
+            .stories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .stories-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .nav-links {
-                display: none;
+
+            .story-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .story-card h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -219,6 +251,7 @@
                 <li><a href="index.html#blog">Blog</a></li>
                 <li><a href="index.html#products">Products</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="pm-insights.html">PM Insights</a></li>
             </ul>
         </div>
     </nav>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Stories | Tech Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e6ed;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #ff6b35, 0 0 10px #ff6b35; }
+            to { text-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35, 0 0 30px #ff6b35; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e0e6ed;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #ff6b35, #ffd23f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .story-card {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 46, 0.7));
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(255, 107, 53, 0.2);
+            border-color: #ff6b35;
+        }
+
+        .story-card h3 {
+            color: #ff6b35;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .story-card:hover h3 {
+            color: #ffd23f;
+        }
+
+        .story-meta {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .story-excerpt {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid #ff6b35;
+            background: transparent;
+            color: #ff6b35;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: #ff6b35;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">{ Shaurya the TechNomad }</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title">Shaurya's Narratives</h2>
+        <div class="stories-grid">
+            <div class="story-card">
+                <h3>Forging India's Future Police: Why We Need a National Police University</h3>
+                <div class="story-meta">Sep 26, 2025 | India</div>
+                <p class="story-excerpt">Proposal for the Establishment of a National Police University (NPU) of India</p>
+                <a href="https://medium.com/@shauryagautam2001/forging-indias-future-police-why-we-need-a-national-police-university-72e00bd0693c" class="btn">Read Story</a>
+            </div>
+            
+            <div class="story-card">
+                <h3>Backwater Brainstorming in Kerala</h3>
+                <div class="story-meta">June 20, 2024 | Alleppey</div>
+                <p class="story-excerpt">Floating houseboat meetings and the serendipitous encounter with a local entrepreneur that inspired my next product idea.</p>
+                <a href="#" class="btn">Read Story</a>
+            </div>
+            
+            <div class="story-card">
+                <h3>Mountain Microservices in Himachal</h3>
+                <div class="story-meta">May 10, 2024 | Manali</div>
+                <p class="story-excerpt">Building distributed systems while surrounded by the Himalayas - where the mountain peaks taught me about system architecture.</p>
+                <a href="#" class="btn">Read Story</a>
+            </div>
+            
+            <div class="story-card">
+                <h3>Beach Bootcamp in Goa</h3>
+                <div class="story-meta">April 5, 2024 | Palolem Beach</div>
+                <p class="story-excerpt">Organizing a developer bootcamp on the beach and learning how the right environment can boost creativity and productivity.</p>
+                <a href="#" class="btn">Read Story</a>
+            </div>
+            
+            <div class="story-card">
+                <h3>Coding with Monks in Ladakh</h3>
+                <div class="story-meta">March 18, 2024 | Leh</div>
+                <p class="story-excerpt">My journey to the highest motorable road and the profound lessons in minimalism and focus I learned from Buddhist monks.</p>
+                <a href="#" class="btn">Read Story</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

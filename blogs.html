@@ -23,19 +23,21 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 50px;
-            background: rgba(10, 10, 10, 0.8);
+            padding: 20px 0;
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 50px;
         }
 
         .logo {
@@ -205,8 +207,8 @@
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
+            .nav-container {
+                padding: 0 20px;
             }
 
             .nav-links {
@@ -290,3 +292,21 @@
     </div>
 </body>
 </html>
+
+    <footer style="padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(255, 107, 53, 0.2); margin-top: 80px; background: rgba(10, 10, 10, 0.5);">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+                <a href="index.html" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Home</a>
+                <a href="index.html#about" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">About</a>
+                <a href="blogs.html" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Blog</a>
+                <a href="story.html" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">Stories</a>
+                <a href="pm-insights.html" style="color: #a0a0a0; text-decoration: none; transition: color 0.3s;">PM Insights</a>
+            </div>
+            <p style="color: #a0a0a0; margin-bottom: 15px; font-size: 0.95rem;">
+                Made with ❤️ while traveling across India
+            </p>
+            <p style="color: #666; font-size: 0.85rem;">
+                © 2024 Shaurya Gautam. Building the future, one line of code at a time.
+            </p>
+        </div>
+    </footer>

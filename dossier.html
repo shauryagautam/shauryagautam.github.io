@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Dossier | Shaurya Gautam</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #0f172a;
+            --accent: #3b82f6;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #020617;
+            --bg-card: #0f172a;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.5s ease;
+            min-height: 100vh;
+        }
+
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: move 20s infinite alternate;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(5%, 5%);
+            }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .header {
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .page-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .page-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .dossier-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .dossier-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dossier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            width: 54px;
+            height: 54px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .card-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .card-list li {
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .card-list li i {
+            color: var(--primary);
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+
+        .card-link {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .card-link i {
+            transition: transform 0.3s;
+        }
+
+        .card-link:hover i {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .dossier-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </header>
+
+        <div style="margin-bottom: 60px;">
+            <h1 class="page-title">Technical <span>Dossier</span></h1>
+            <p class="page-subtitle">A deep-dive into product strategy, data architecture, and market economics.</p>
+        </div>
+
+        <div class="dossier-grid">
+            <!-- Product Analytics -->
+            <div class="dossier-card">
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3 class="card-title">Product Analytics</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <strong>LTV/CAC Frameworks</strong>: Designing models for long-term
+                        sustainability.</li>
+                    <li><i class="fas fa-check"></i> <strong>Unit Economics</strong>: Analyzing cost-per-acquisition and
+                        contribution margins.</li>
+                    <li><i class="fas fa-check"></i> <strong>A/B Testing</strong>: Scaling product features via
+                        hypothesis-driven experimentation.</li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">View Detailed Analysis <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Market Strategy -->
+            <div class="dossier-card">
+                <div class="card-icon"><i class="fas fa-chess-knight"></i></div>
+                <h3 class="card-title">GTM & Market Strategy</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <strong>GTM Strategy Development</strong>: Zero-to-one product
+                        launches in emerging markets.</li>
+                    <li><i class="fas fa-check"></i> <strong>Competitive Intelligence</strong>: Deep dives into OTT and
+                        Fintech landscapes.</li>
+                    <li><i class="fas fa-check"></i> <strong>Revenue Diversification</strong>: Creating resilient
+                        monetization roadmaps.</li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">Explore Frameworks <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Data Engineering -->
+            <div class="dossier-card">
+                <div class="card-icon"><i class="fas fa-database"></i></div>
+                <h3 class="card-title">Data Architecture</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <strong>Advanced SQL</strong>: Building complex ETL pipelines and
+                        transformation layers.</li>
+                    <li><i class="fas fa-check"></i> <strong>Python Strategy</strong>: Automating insight generation
+                        using Pandas and NumPy.</li>
+                    <li><i class="fas fa-check"></i> <strong>Database Modeling</strong>: Designing scalable schema for
+                        product logging.</li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">Technical Documentation <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Visualization -->
+            <div class="dossier-card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <h3 class="card-title">Insight Visualization</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <strong>Power BI Dashboards</strong>: High-level executive
+                        reporting systems.</li>
+                    <li><i class="fas fa-check"></i> <strong>Storytelling via Data</strong>: Presenting technical
+                        insights to non-technical stakeholders.</li>
+                    <li><i class="fas fa-check"></i> <strong>Real-time Tracking</strong>: Building live monitors for
+                        core product KPIs.</li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">View Portfolio <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Use user's theme preference if available
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+
+</html>

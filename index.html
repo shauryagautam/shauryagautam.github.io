@@ -20,28 +20,32 @@
             --primary: #10b981;
             /* Emerald */
             --primary-dark: #059669;
+            --primary-light: #34d399;
             --secondary: #0f172a;
             /* Deep Navy/Obsidian */
+            --secondary-light: #1e293b;
             --accent: #3b82f6;
             /* Electric Blue pulse */
-
+            --accent-purple: #8b5cf6;
+            
             --bg-body: #f8fafc;
-            --bg-card: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.7);
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --border: #e2e8f0;
+            --border: rgba(226, 232, 240, 0.8);
 
-            --glass-bg: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(226, 232, 240, 0.8);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(226, 232, 240, 0.5);
 
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.15);
 
             --radius-lg: 1rem;
             --radius-xl: 1.5rem;
 
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* Ambient Background */
@@ -92,12 +96,13 @@
 
         [data-theme="dark"] {
             --bg-body: #020617;
-            --bg-card: #0f172a;
+            --bg-card: rgba(15, 23, 42, 0.6);
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
-            --border: #1e293b;
-            --glass-bg: rgba(15, 23, 42, 0.8);
-            --glass-border: rgba(30, 41, 59, 0.8);
+            --border: rgba(30, 41, 59, 0.8);
+            --glass-bg: rgba(15, 23, 42, 0.85);
+            --glass-border: rgba(30, 41, 59, 0.5);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.1);
         }
 
         * {
@@ -347,6 +352,8 @@
 
         .product-card {
             background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border);
             border-radius: var(--radius-xl);
             padding: 40px;
@@ -355,12 +362,31 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow);
+            z-index: 1;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+            transition: var(--transition);
+            opacity: 0;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            border-color: var(--primary-light);
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
         }
 
         .product-icon {
@@ -601,8 +627,8 @@
             <a href="#home" class="logo">SHAURYA GAUTAM</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#products">Engineering</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -621,10 +647,10 @@
                     <i class="fas fa-chart-line"></i>
                     Data-Driven Product Excellence
                 </div>
-                <h1 class="hero-title">Maximizing Product Potential Through <span>Data Strategy</span></h1>
+                <h1 class="hero-title">Maximizing Product Potential Through <span>Data & Code</span></h1>
                 <p class="hero-description">
-                    I'm a Product Analyst specializing in revenue strategy and unit economics. I transform complex data
-                    into actionable product roadmaps that drive growth.
+                    I'm a Product Analyst & Software Engineer specializing in revenue strategy and scalable backend systems. I transform complex problems
+                    into actionable workflows and robust architectures that drive growth.
                 </p>
                 <div class="cta-group">
                     <a href="#products" class="btn btn-primary">View Products <i class="fas fa-arrow-right"></i></a>
@@ -642,7 +668,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Featured Work</span>
-                <h2 class="section-title">Incubated Products</h2>
+                <h2 class="section-title">Incubated Engineering & Products</h2>
             </div>
             <div class="products-grid">
                 <!-- Aarivu -->
@@ -669,6 +695,19 @@
                     </p>
                     <a href="https://danatrails.social" target="_blank" class="product-link">
                         Explore Trails <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- Astra Framework -->
+                <div class="product-card" style="grid-column: 1 / -1;">
+                    <div class="product-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.3);">Go Framework</div>
+                    <div class="product-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);"><i class="fa-brands fa-golang"></i></div>
+                    <h3 class="product-name">Astra</h3>
+                    <p class="product-desc" style="max-width: 800px;">
+                        A next-generation, batteries-included web framework written in Go. A 1:1 conceptual clone of AdonisJS for the Go ecosystem, featuring a robust IoC container, advanced ORM, queue workers, and real-time WebSocket support for elegant backend development.
+                    </p>
+                    <a href="https://github.com/shauryagautam/Astra.git" target="_blank" class="product-link" style="color: var(--accent-purple);">
+                        View Source <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>

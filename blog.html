@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Shaurya Gautam</title>
+    <meta name="description"
+        content="Product Analyst & Software Engineer. Insights on Engineering, Strategy, and Growth.">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            /* Sleek Professional Palette */
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --secondary-light: #1e293b;
+            --accent: #3b82f6;
+            --accent-purple: #8b5cf6;
+
+            --bg-body: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: rgba(226, 232, 240, 0.8);
+
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(226, 232, 240, 0.5);
+
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.15);
+
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background: var(--bg-body);
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: move 20s infinite alternate;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            animation-duration: 25s;
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            animation-duration: 30s;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(10%, 10%) scale(1.1);
+            }
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #020617;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: rgba(30, 41, 59, 0.8);
+            --glass-bg: rgba(15, 23, 42, 0.85);
+            --glass-border: rgba(30, 41, 59, 0.5);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--border);
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        /* --- Page Header --- */
+        .page-header {
+            padding: 160px 0 60px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .page-title span {
+            color: var(--primary);
+        }
+
+        .page-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        /* --- Blog List --- */
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding-bottom: 100px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 40px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: -1;
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            border-color: var(--primary-light);
+        }
+
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-right: 1px solid var(--border);
+            padding-right: 20px;
+        }
+
+        .blog-date {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .blog-tag {
+            align-self: flex-start;
+            padding: 4px 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-content h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-content h2 {
+            color: var(--primary);
+        }
+
+        .blog-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .read-more i {
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(4px);
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .blog-card {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .blog-meta {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-right: 0;
+                padding-bottom: 20px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">SHAURYA GAUTAM</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Engineering</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Insights, Strategy & <span>Engineering</span></h1>
+            <p class="page-description">
+                Deep dives into software architecture, scalable web frameworks, and product growth strategies.
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog List Section -->
+    <section>
+        <div class="container">
+            <div class="blog-posts">
+
+                <!-- Blog 1 -->
+                <a href="dossier.html" class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 2026</span>
+                        <span class="blog-tag"
+                            style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);">Systems</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: auto;">12 min read</span>
+                    </div>
+                    <div class="blog-content">
+                        <h2>Building Astra: A Next-Gen Go Framework</h2>
+                        <p>
+                            An architectural deep-dive into creating a 1:1 conceptual clone of AdonisJS for the Go
+                            ecosystem. Exploring the trade-offs of Dependency Injection in statically typed languages
+                            and orchestrating real-time queue workers.
+                        </p>
+                        <span class="read-more">Read Technical Dossier <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Blog 2 -->
+                <a href="dossier.html" class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-date">Oct 2025</span>
+                        <span class="blog-tag">Revenue Strategy</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: auto;">5 min read</span>
+                    </div>
+                    <div class="blog-content">
+                        <h2>The Unit Economics of Hyper-Growth</h2>
+                        <p>
+                            Deep dive into LTV:CAC optimization strategies for scaling startups in the tech ecosystem.
+                            Analyzing how micro-optimizations in pricing tiers dramatically affect customer lifetime
+                            value.
+                        </p>
+                        <span class="read-more">Read Strategy <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Blog 3 -->
+                <a href="dossier.html" class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-date">Jun 2024</span>
+                        <span class="blog-tag">Market Analysis</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: auto;">8 min read</span>
+                    </div>
+                    <div class="blog-content">
+                        <h2>OTT Monetization: Beyond Subscriptions</h2>
+                        <p>
+                            Analyzing the shift from pure subscriptions to diverse revenue streams in the OTT landscape.
+                            Identifying "Stream-to-Commerce" as the next major pivot for media platforms.
+                        </p>
+                        <span class="read-more">Read Strategy <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Shaurya Gautam | Code & Strategy</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Persist Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeIcon = document.getElementById('theme-icon');
+            if (savedTheme === 'light') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+    </script>
+</body>
+
+</html>

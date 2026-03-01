@@ -27,7 +27,7 @@
             --accent: #3b82f6;
             /* Electric Blue pulse */
             --accent-purple: #8b5cf6;
-            
+
             --bg-body: #f8fafc;
             --bg-card: rgba(255, 255, 255, 0.7);
             --text-main: #1e293b;
@@ -138,38 +138,58 @@
             padding: 0 24px;
         }
 
-        /* --- Navigation --- */
+        /* --- Navigation (Solidroad Style) --- */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            max-width: 90%;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 12px 24px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
         }
 
+        [data-theme="dark"] nav {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
         nav.scrolled {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        [data-theme="dark"] nav.scrolled {
+            background: rgba(15, 23, 42, 0.85);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 40px;
+            padding: 0;
         }
 
         .logo {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.2px;
+            margin-right: 16px;
         }
 
         .nav-links {
@@ -194,15 +214,21 @@
 
         .theme-toggle {
             cursor: pointer;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: var(--border);
-            color: var(--text-main);
+            background: var(--primary);
+            color: white;
             transition: var(--transition);
+            margin-left: 16px;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
 
         /* --- Hero Section --- */
@@ -346,24 +372,36 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
+        /* --- Sleek Product Cards (Anirudh Style) --- */
         .product-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-xl);
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
             padding: 40px;
             display: flex;
             flex-direction: column;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            z-index: 1;
+        }
+
+        .product-card:hover {
+            background: rgba(15, 23, 42, 0.7);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        z-index: 1;
         }
 
         .product-card::before {
@@ -373,7 +411,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
             z-index: -1;
             transition: var(--transition);
             opacity: 0;
@@ -384,46 +422,60 @@
             box-shadow: var(--shadow-lg), var(--shadow-glow);
             border-color: var(--primary-light);
         }
-        
+
         .product-card:hover::before {
             opacity: 1;
         }
 
-        .product-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--primary);
-            border-radius: 16px;
+        .product-header {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 24px;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .product-card:hover .product-icon {
+            color: var(--primary);
         }
 
         .product-tag {
-            position: absolute;
-            top: 24px;
-            right: 24px;
             padding: 4px 12px;
-            background: var(--border);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 500;
             color: var(--text-muted);
         }
 
         .product-name {
-            font-size: 1.75rem;
-            margin-bottom: 16px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: var(--text-main);
+            letter-spacing: -0.5px;
         }
 
         .product-desc {
             color: var(--text-muted);
+            font-size: 1.05rem;
             margin-bottom: 32px;
+            max-width: 800px;
+            line-height: 1.6;
             flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
         }
 
         .product-link {
@@ -621,10 +673,10 @@
         <div class="blob blob-2"></div>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation (Solidroad Style Pill) -->
     <nav id="nav">
-        <div class="container nav-content">
-            <a href="#home" class="logo">SHAURYA GAUTAM</a>
+        <div class="nav-content">
+            <a href="#home" class="logo">S.G.</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Engineering</a></li>
@@ -649,11 +701,15 @@
                 </div>
                 <h1 class="hero-title">Maximizing Product Potential Through <span>Data & Code</span></h1>
                 <p class="hero-description">
-                    I'm a Product Analyst & Software Engineer specializing in revenue strategy and scalable backend systems. I transform complex problems
+                    I'm a Product Analyst & Software Engineer specializing in revenue strategy and scalable backend
+                    systems. I transform complex problems
                     into actionable workflows and robust architectures that drive growth.
                 </p>
                 <div class="cta-group">
-                    <a href="#products" class="btn btn-primary">View Products <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-primary"
+                        style="background: var(--text-main); color: var(--bg-main);">Hire Me <i
+                            class="fas fa-handshake"></i></a>
+                    <a href="#products" class="btn btn-outline">View Products <i class="fas fa-arrow-down"></i></a>
                     <a href="dossier.html" class="btn btn-outline">Technical Dossier</a>
                 </div>
             </div>
@@ -673,42 +729,59 @@
             <div class="products-grid">
                 <!-- Aarivu -->
                 <div class="product-card">
-                    <div class="product-tag">Social Media</div>
-                    <div class="product-icon"><i class="fas fa-users"></i></div>
+                    <div class="product-header">
+                        <div class="product-icon"><i class="fas fa-users"></i></div>
+                        <div class="product-tag">Social Media</div>
+                    </div>
                     <h3 class="product-name">Aarivu</h3>
                     <p class="product-desc">
                         A modern social media platform designed for knowledge sharing and community growth. Built to
                         redefine how teams collaborate and information flows.
                     </p>
-                    <a href="https://aarivu.live" target="_blank" class="product-link">
-                        Launch Platform <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <div class="product-footer">
+                        <a href="https://aarivu.live" target="_blank" class="btn btn-primary"
+                            style="background: rgba(255, 255, 255, 0.1); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            Launch Platform <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
                 <!-- Danatrails -->
                 <div class="product-card">
-                    <div class="product-tag">Adventure Tech</div>
-                    <div class="product-icon"><i class="fas fa-mountain"></i></div>
+                    <div class="product-header">
+                        <div class="product-icon"><i class="fas fa-mountain"></i></div>
+                        <div class="product-tag">Adventure Tech</div>
+                    </div>
                     <h3 class="product-name">Danatrails</h3>
                     <p class="product-desc">
                         The ultimate trekking buddy. An end-to-end companion app for adventure seekers, providing trail
                         data, safety tools, and community tracking.
                     </p>
-                    <a href="https://danatrails.social" target="_blank" class="product-link">
-                        Explore Trails <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <div class="product-footer">
+                        <a href="https://danatrails.social" target="_blank" class="btn btn-primary"
+                            style="background: rgba(255, 255, 255, 0.1); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            Explore Trails <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
-                
+
                 <!-- Astra Framework -->
-                <div class="product-card" style="grid-column: 1 / -1;">
-                    <div class="product-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.3);">Go Framework</div>
-                    <div class="product-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);"><i class="fa-brands fa-golang"></i></div>
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon"><i class="fa-brands fa-golang"></i></div>
+                        <div class="product-tag">Go Framework</div>
+                    </div>
                     <h3 class="product-name">Astra</h3>
-                    <p class="product-desc" style="max-width: 800px;">
-                        A next-generation, batteries-included web framework written in Go. A 1:1 conceptual clone of AdonisJS for the Go ecosystem, featuring a robust IoC container, advanced ORM, queue workers, and real-time WebSocket support for elegant backend development.
+                    <p class="product-desc">
+                        A next-generation, batteries-included web framework written in Go. A 1:1 conceptual clone of
+                        AdonisJS for the Go ecosystem, featuring a robust IoC container, advanced ORM, queue workers,
+                        and real-time WebSocket support for elegant backend development.
                     </p>
-                    <a href="https://github.com/shauryagautam/Astra.git" target="_blank" class="product-link" style="color: var(--accent-purple);">
-                        View Source <i class="fab fa-github"></i>
-                    </a>
+                    <div class="product-footer">
+                        <a href="https://github.com/shauryagautam/Astra.git" target="_blank" class="btn btn-primary"
+                            style="background: rgba(255, 255, 255, 0.1); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            View Source <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

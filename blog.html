@@ -135,38 +135,58 @@
             padding: 0 24px;
         }
 
-        /* --- Navigation --- */
+        /* --- Navigation (Solidroad Style) --- */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            max-width: 90%;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 12px 24px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
         }
 
+        [data-theme="dark"] nav {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
         nav.scrolled {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        [data-theme="dark"] nav.scrolled {
+            background: rgba(15, 23, 42, 0.85);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 40px;
+            padding: 0;
         }
 
         .logo {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.2px;
+            margin-right: 16px;
         }
 
         .nav-links {
@@ -192,15 +212,21 @@
 
         .theme-toggle {
             cursor: pointer;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: var(--border);
-            color: var(--text-main);
+            background: var(--primary);
+            color: white;
             transition: var(--transition);
+            margin-left: 16px;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
 
         /* --- Page Header --- */
@@ -380,10 +406,10 @@
         <div class="blob blob-2"></div>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation (Solidroad Style Pill) -->
     <nav id="nav">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">SHAURYA GAUTAM</a>
+        <div class="nav-content">
+            <a href="index.html" class="logo">S.G.</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#products">Engineering</a></li>

@@ -1,12 +1,15 @@
 ---
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "Product Manager Portfolio - Building products that scale and delight users." } = Astro.props;
+const {
+	title,
+	description = "Product Manager Portfolio - Building products that scale and delight users.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,12 +21,12 @@ const { title, description = "Product Manager Portfolio - Building products that
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		
+
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content={title} />
@@ -31,21 +34,24 @@ const { title, description = "Product Manager Portfolio - Building products that
 
 		<script is:inline>
 			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-					return localStorage.getItem('theme');
+				if (
+					typeof localStorage !== "undefined" &&
+					localStorage.getItem("theme")
+				) {
+					return localStorage.getItem("theme");
 				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					return 'dark';
+				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+					return "dark";
 				}
-				return 'light';
+				return "light";
 			})();
-		
-			if (theme === 'light') {
-				document.documentElement.classList.remove('dark');
+
+			if (theme === "light") {
+				document.documentElement.classList.remove("dark");
 			} else {
-				document.documentElement.classList.add('dark');
+				document.documentElement.classList.add("dark");
 			}
-			window.localStorage.setItem('theme', theme);
+			window.localStorage.setItem("theme", theme);
 		</script>
 	</head>
 	<body>

@@ -1,36 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Ecosystem from '../components/Ecosystem.astro';
-import StudioSection from '../components/StudioSection.astro';
-import Clients from '../components/Clients.astro';
-import ProductThinking from '../components/ProductThinking.astro';
-import CaseStudyEmbed from '../components/CaseStudyEmbed';
-import Experience from '../components/Experience.astro';
-import Skills from '../components/Skills.astro';
-import Contact from '../components/Contact';
-import LiquidBackground from '../components/LiquidBackground';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Ecosystem from "../components/Ecosystem.astro";
+import StudioSection from "../components/StudioSection.astro";
+import Clients from "../components/Clients.astro";
+import ProductThinking from "../components/ProductThinking.astro";
+import CaseStudyEmbed from "../components/CaseStudyEmbed";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact";
+import LiquidBackground from "../components/LiquidBackground";
 
 const studioCaseStudies = [
   {
     title: "Dana Trails (Travel)",
     category: "Booking Funnel Optimization",
     url: "https://danatrails.social/",
-    image: "/images/travel.png"
+    image: "/images/travel.png",
   },
   {
     title: "Aarivu (Social Media)",
     category: "Retention & Growth Loops",
     url: "https://aarivu.live/",
-    image: "/images/social.png"
+    image: "/images/social.png",
   },
   {
     title: "PC School (Coaching)",
     category: "1:1 Personal Coaching",
     url: "https://pcschool.in/",
-    image: "/images/hardware.png"
-  }
+    image: "/images/hardware.png",
+  },
 ];
 
 const notionCaseStudies = [
@@ -38,63 +38,63 @@ const notionCaseStudies = [
     title: "Airlearn Strategy",
     category: "Corporate Training & B2B SaaS",
     url: "https://silk-attention-c9a.notion.site/ebd//323803ec4056811480ffef8fa8c0b7aa",
-    image: "/images/notion-airlearn.png"
+    image: "/images/notion-airlearn.png",
   },
   {
     title: "The Growth Engine",
     category: "Consumer Growth Frameworks",
     url: "https://silk-attention-c9a.notion.site/ebd//bd9513e60191411cb1cc496ae00a10bb",
-    image: "/images/notion-growth.png"
+    image: "/images/notion-growth.png",
   },
   {
     title: "Project Leapfrog",
     category: "Industrial Tech & Hardware Strategy",
     url: "https://silk-attention-c9a.notion.site/ebd//34b803ec405681369dfeee71f77bc5b2",
-    image: "/images/notion-leapfrog.png"
-  }
+    image: "/images/notion-leapfrog.png",
+  },
 ];
 
 const engineeringProjects = [
-  { 
-    title: "Astra", 
-    desc: "A fullstack Golang framework designed for developer productivity and systems-level efficiency.", 
+  {
+    title: "Astra",
+    desc: "A fullstack Golang framework designed for developer productivity and systems-level efficiency.",
     tech: "Go, Architecture",
     github: "https://github.com/shauryagautam/Astra.git",
-    visit: "https://astraframework.appwrite.network/"
+    visit: "https://astraframework.appwrite.network/",
   },
-  { 
-    title: "Aarivu", 
-    desc: "A social platform redefining knowledge sharing through hypothesis-driven growth loops.", 
+  {
+    title: "Aarivu",
+    desc: "A social platform redefining knowledge sharing through hypothesis-driven growth loops.",
     tech: "Social Engine, React",
-    visit: "https://aarivu.live"
-  }
+    visit: "https://aarivu.live",
+  },
 ];
 
 const articles = [
   {
     title: "The LTV:CAC Playbook for Indian OTT",
     date: "Mar 2024",
-    readTime: "6 min read"
+    readTime: "6 min read",
   },
   {
     title: "Engineering for Commercial Viability",
     date: "Jan 2024",
-    readTime: "8 min read"
+    readTime: "8 min read",
   },
   {
     title: "The Rise of Sovereign Operating Systems",
     date: "Nov 2023",
-    readTime: "10 min read"
-  }
+    readTime: "10 min read",
+  },
 ];
 ---
 
 <Layout title="Shaurya Kumar | Product Builder. Operator. Founder.">
-	<LiquidBackground client:load />
-	<Navbar client:load />
-	
-	<main>
-		<Hero client:load />
+  <LiquidBackground client:load />
+  <Navbar client:load />
+
+  <main>
+    <Hero client:load />
 
     <Ecosystem />
 
@@ -104,33 +104,53 @@ const articles = [
     <ProductThinking />
 
     <!-- Consulting Track -->
-		<section id="work" class="section-padding bg-neutral-50/50 dark:bg-transparent">
-			<div class="max-w-7xl mx-auto">
-				<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-					<div>
-						<span class="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4 block">Consulting Track</span>
-						<h2 class="text-5xl md:text-7xl font-serif font-bold">Studio Work</h2>
-					</div>
-					<p class="text-lg text-neutral-500 max-w-sm mb-2">
-						Real-world execution for startups across travel, social, and industrial hardware.
-					</p>
-				</div>
+    <section
+      id="work"
+      class="section-padding bg-neutral-50/50 dark:bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
+        >
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4 block"
+              >Consulting Track</span
+            >
+            <h2 class="text-5xl md:text-7xl font-serif font-bold">
+              Studio Work
+            </h2>
+          </div>
+          <p class="text-lg text-neutral-500 max-w-sm mb-2">
+            Real-world execution for startups across travel, social, and
+            industrial hardware.
+          </p>
+        </div>
 
-				<div class="space-y-24">
-					{studioCaseStudies.map((study) => (
-						<CaseStudyEmbed client:visible {...study} />
-					))}
-				</div>
-			</div>
-		</section>
+        <div class="space-y-24">
+          {
+            studioCaseStudies.map((study) => (
+              <CaseStudyEmbed client:visible {...study} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
     <!-- Product Track -->
     <section id="deep-dives" class="section-padding">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
+        >
           <div>
-            <span class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block">Deep Dives</span>
-            <h2 class="text-5xl md:text-7xl font-serif font-bold">Product Strategy</h2>
+            <span
+              class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block"
+              >Deep Dives</span
+            >
+            <h2 class="text-5xl md:text-7xl font-serif font-bold">
+              Product Strategy
+            </h2>
           </div>
           <p class="text-lg text-neutral-500 max-w-sm mb-2">
             Detailed case studies and strategy documentation hosted on Notion.
@@ -138,103 +158,267 @@ const articles = [
         </div>
 
         <div class="space-y-24">
-          {notionCaseStudies.map((study) => (
-            <CaseStudyEmbed client:visible {...study} />
-          ))}
+          {
+            notionCaseStudies.map((study) => (
+              <CaseStudyEmbed client:visible {...study} />
+            ))
+          }
         </div>
       </div>
     </section>
 
     <Skills />
 
-		<section id="projects" class="section-padding">
-			<div class="max-w-7xl mx-auto">
-				<div class="mb-16">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Incubated Engineering</h2>
-					<p class="text-neutral-500 text-lg">Scalable products and frameworks built with Go, Python, and modern web tech.</p>
-				</div>
+    <section id="projects" class="section-padding">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">
+            Incubated Engineering
+          </h2>
+          <p class="text-neutral-500 text-lg">
+            Scalable products and frameworks built with Go, Python, and modern
+            web tech.
+          </p>
+        </div>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{engineeringProjects.map((proj) => (
-						<div class="group p-8 rounded-3xl border border-neutral-100 dark:border-neutral-800 hover:bg-white/10 backdrop-blur-xl transition-all hover:-translate-y-2">
-							<h3 class="text-2xl font-serif font-bold mb-2 group-hover:text-accent transition-colors">{proj.title}</h3>
-							<p class="text-neutral-500 mb-6 text-sm leading-relaxed">{proj.desc}</p>
-							
-              <div class="flex flex-wrap gap-4 mb-8">
-                {proj.github && (
-                  <a href={proj.github} target="_blank" rel="noopener noreferrer" class="group/github flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-accent transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/github:scale-110"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                    GitHub
-                  </a>
-                )}
-                {proj.visit && (
-                  <a href={proj.visit} target="_blank" rel="noopener noreferrer" class="group/visit flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-accent transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/visit:translate-x-0.5 group-hover/visit:-translate-y-0.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                    Visit Site
-                  </a>
-                )}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            engineeringProjects.map((proj) => (
+              <div class="group p-8 rounded-3xl border border-neutral-100 dark:border-neutral-800 hover:bg-white/10 backdrop-blur-xl transition-all hover:-translate-y-2">
+                <h3 class="text-2xl font-serif font-bold mb-2 group-hover:text-accent transition-colors">
+                  {proj.title}
+                </h3>
+                <p class="text-neutral-500 mb-6 text-sm leading-relaxed">
+                  {proj.desc}
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-8">
+                  {proj.github && (
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group/github flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-accent transition-all"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="transition-transform group-hover/github:scale-110"
+                      >
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                      </svg>
+                      GitHub
+                    </a>
+                  )}
+                  {proj.visit && (
+                    <a
+                      href={proj.visit}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group/visit flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-accent transition-all"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="transition-transform group-hover/visit:translate-x-0.5 group-hover/visit:-translate-y-0.5"
+                      >
+                        <path d="M7 7h10v10" />
+                        <path d="M7 17 17 7" />
+                      </svg>
+                      Visit Site
+                    </a>
+                  )}
+                </div>
+
+                <div class="flex justify-between items-center mt-auto border-t border-neutral-100 dark:border-neutral-800 pt-6">
+                  <div class="text-[10px] font-bold uppercase tracking-widest text-accent">
+                    {proj.tech}
+                  </div>
+                </div>
               </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-							<div class="flex justify-between items-center mt-auto border-t border-neutral-100 dark:border-neutral-800 pt-6">
-                <div class="text-[10px] font-bold uppercase tracking-widest text-accent">{proj.tech}</div>
-              </div>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
+    <Experience />
 
-		<Experience />
+    <section
+      id="articles"
+      class="section-padding bg-neutral-50/50 dark:bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">
+            Insights
+          </h2>
+          <p class="text-neutral-500 text-lg">
+            Quantitative reflections on building world-class products.
+          </p>
+        </div>
 
-    <section id="articles" class="section-padding bg-neutral-50/50 dark:bg-transparent">
-			<div class="max-w-7xl mx-auto">
-				<div class="mb-16">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Insights</h2>
-					<p class="text-neutral-500 text-lg">Quantitative reflections on building world-class products.</p>
-				</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {
+            articles.map((post) => (
+              <a
+                href="#"
+                class="group p-8 bg-white/10 dark:bg-neutral-950/40 backdrop-blur-xl rounded-3xl border border-neutral-100 dark:border-neutral-800 hover:border-accent transition-colors"
+              >
+                <div class="flex justify-between items-center mb-6">
+                  <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                    {post.date}
+                  </span>
+                  <span class="text-xs font-medium text-neutral-400">
+                    {post.readTime}
+                  </span>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-4 group-hover:text-accent transition-colors">
+                  {post.title}
+                </h3>
+                <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Read Article <span class="text-lg">→</span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					{articles.map((post) => (
-						<a href="#" class="group p-8 bg-white/10 dark:bg-neutral-950/40 backdrop-blur-xl rounded-3xl border border-neutral-100 dark:border-neutral-800 hover:border-accent transition-colors">
-							<div class="flex justify-between items-center mb-6">
-								<span class="text-xs font-bold uppercase tracking-widest text-neutral-400">{post.date}</span>
-								<span class="text-xs font-medium text-neutral-400">{post.readTime}</span>
-							</div>
-							<h3 class="text-2xl font-serif font-bold mb-4 group-hover:text-accent transition-colors">{post.title}</h3>
-							<div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
-								Read Article <span class="text-lg">→</span>
-							</div>
-						</a>
-					))}
-				</div>
-			</div>
-		</section>
+    <Contact client:visible />
+  </main>
 
-		<Contact client:visible />
-	</main>
-
-	<footer class="py-12 border-t border-neutral-100 dark:border-neutral-800">
-		<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-			<div class="text-sm text-neutral-500">
-				© 2026 Shaurya Kumar | PM & Engineering. Inspired by Apple & Tesla.
-			</div>
-			<div class="flex gap-6">
-				<a href="https://www.linkedin.com/in/shaurya13/" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-accent transition-colors" aria-label="LinkedIn">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-				</a>
-				<a href="https://github.com/shauryagautam" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-accent transition-colors" aria-label="GitHub">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-				</a>
-				<a href="https://x.com/Shaurya1309" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-accent transition-colors" aria-label="X">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-				</a>
-				<a href="https://www.instagram.com/mr.shauryagautam/" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-accent transition-colors" aria-label="Instagram">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-				</a>
-				<a href="https://t.me/Shshaurya" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-accent transition-colors" aria-label="Telegram">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-				</a>
-			</div>
-		</div>
-	</footer>
+  <footer class="py-12 border-t border-neutral-100 dark:border-neutral-800">
+    <div
+      class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+    >
+      <div class="text-sm text-neutral-500">
+        © 2026 Shaurya Kumar | PM & Engineering. Inspired by Apple & Tesla.
+      </div>
+      <div class="flex gap-6">
+        <a
+          href="https://www.linkedin.com/in/shaurya13/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-400 hover:text-accent transition-colors"
+          aria-label="LinkedIn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path><rect width="4" height="12" x="2" y="9"></rect><circle
+              cx="4"
+              cy="4"
+              r="2"></circle></svg
+          >
+        </a>
+        <a
+          href="https://github.com/shauryagautam"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-400 hover:text-accent transition-colors"
+          aria-label="GitHub"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+          >
+        </a>
+        <a
+          href="https://x.com/Shaurya1309"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-400 hover:text-accent transition-colors"
+          aria-label="X"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+            ><path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+            ></path></svg
+          >
+        </a>
+        <a
+          href="https://www.instagram.com/mr.shauryagautam/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-400 hover:text-accent transition-colors"
+          aria-label="Instagram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
+              d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+              x1="17.5"
+              x2="17.51"
+              y1="6.5"
+              y2="6.5"></line></svg
+          >
+        </a>
+        <a
+          href="https://t.me/Shshaurya"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-400 hover:text-accent transition-colors"
+          aria-label="Telegram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><line x1="22" x2="11" y1="2" y2="13"></line><polygon
+              points="22 2 15 22 11 13 2 9 22 2"></polygon></svg
+          >
+        </a>
+      </div>
+    </div>
+  </footer>
 </Layout>

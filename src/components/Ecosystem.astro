@@ -33,7 +33,7 @@ const pillars = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
       {/* Decorative connection lines (visible on desktop) */}
-      <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/10 -z-0"></div>
+      <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/10 z-0"></div>
       
       {pillars.map((pillar) => (
         <div class="relative z-10 p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:border-accent transition-all group">

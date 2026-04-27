@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act, waitFor } from '@testing-library/react';
 import { useTheme } from '../../hooks/useTheme';
 
 describe('useTheme', () => {
@@ -57,17 +57,20 @@ describe('useTheme', () => {
     expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
 
-  it('should load saved theme from localStorage', () => {
-    localStorage.setItem('theme', 'dark');
+  it('should load saved theme from localStorage', async () => {
+    vi.spyOn(Storage.prototype, 'getItem').mockReturnValue('dark');
 
     const { result } = renderHook(() => useTheme());
 
     expect(result.current.theme).toBe('dark');
     expect(document.documentElement.classList.contains('dark')).toBe(true);
+    
+    vi.restoreAllMocks();
   });
 
-  it('should toggle theme correctly', () => {
+  it('should toggle theme correctly', async () => {
     const { result } = renderHook(() => useTheme());
+    const setItemSpy = vi.spyOn(Storage.prototype, 'setItem');
 
     expect(result.current.theme).toBe('light');
 
@@ -78,7 +81,7 @@ describe('useTheme', () => {
     expect(result.current.theme).toBe('dark');
     expect(result.current.isDark).toBe(true);
     expect(document.documentElement.classList.contains('dark')).toBe(true);
-    expect(localStorage.setItem).toHaveBeenCalledWith('theme', 'dark');
+    expect(setItemSpy).toHaveBeenCalledWith('theme', 'dark');
 
     act(() => {
       result.current.toggleTheme();
@@ -87,11 +90,14 @@ describe('useTheme', () => {
     expect(result.current.theme).toBe('light');
     expect(result.current.isLight).toBe(true);
     expect(document.documentElement.classList.contains('dark')).toBe(false);
-    expect(localStorage.setItem).toHaveBeenCalledWith('theme', 'light');
+    expect(setItemSpy).toHaveBeenCalledWith('theme', 'light');
+    
+    vi.restoreAllMocks();
   });
 
   it('should set theme explicitly', () => {
     const { result } = renderHook(() => useTheme());
+    const setItemSpy = vi.spyOn(Storage.prototype, 'setItem');
 
     act(() => {
       result.current.setTheme('dark');
@@ -99,6 +105,8 @@ describe('useTheme', () => {
 
     expect(result.current.theme).toBe('dark');
     expect(document.documentElement.classList.contains('dark')).toBe(true);
-    expect(localStorage.setItem).toHaveBeenCalledWith('theme', 'dark');
+    expect(setItemSpy).toHaveBeenCalledWith('theme', 'dark');
+    
+    vi.restoreAllMocks();
   });
 });

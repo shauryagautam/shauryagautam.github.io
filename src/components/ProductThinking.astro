@@ -3,57 +3,85 @@ const thinkingItems = [
   {
     title: "The Build vs. Buy Framework",
     category: "Decision Framework",
-    description: "A systematic approach to evaluating proprietary advantage vs. speed-to-market. When to internalize AI infrastructure.",
-    tags: ["Strategy", "Unit Economics"]
+    description:
+      "A systematic approach to evaluating proprietary advantage vs. speed-to-market. When to internalize AI infrastructure.",
+    tags: ["Strategy", "Unit Economics"],
   },
   {
     title: "Teardown: Linear's Growth Flywheel",
     category: "Product Teardown",
-    description: "Analyzing the 'invisible' UX choices that drive compounding user retention and developer obsession.",
-    tags: ["UX", "Retention Models"]
+    description:
+      "Analyzing the 'invisible' UX choices that drive compounding user retention and developer obsession.",
+    tags: ["UX", "Retention Models"],
   },
   {
     title: "Navigating the AI Hype Cycle",
     category: "Tradeoff Analysis",
-    description: "Evaluating the tradeoff between generative AI features and core product stability in enterprise SaaS.",
-    tags: ["AI", "Risk Management"]
-  }
+    description:
+      "Evaluating the tradeoff between generative AI features and core product stability in enterprise SaaS.",
+    tags: ["AI", "Risk Management"],
+  },
 ];
 ---
 
-<section id="thinking" class="section-padding border-t border-neutral-100 dark:border-neutral-800">
+<section
+  id="thinking"
+  class="section-padding border-t border-neutral-100 dark:border-neutral-800"
+>
   <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8">
+    <div
+      class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8"
+    >
       <div class="max-w-2xl">
-        <span class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block">How I Think</span>
-        <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Product Thinking & <span class="italic text-neutral-400">Frameworks</span></h2>
+        <span
+          class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block"
+          >How I Think</span
+        >
+        <h2
+          class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight"
+        >
+          Product Thinking & <span class="italic text-neutral-400"
+            >Frameworks</span>
+        </h2>
       </div>
       <p class="text-lg text-neutral-500 max-w-sm mt-4">
-        Beyond execution, I focus on the 'Why'. Here is my logic on tradeoffs, systems, and product strategy.
+        Beyond execution, I focus on the 'Why'. Here is my logic on tradeoffs,
+        systems, and product strategy.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {thinkingItems.map((item) => (
-        <div class="glass-card p-10 group flex flex-col hover:border-accent/50 transition-all">
-          <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-6">{item.category}</span>
-          <h3 class="text-2xl font-serif font-bold mb-4 group-hover:text-accent transition-colors">{item.title}</h3>
-          <p class="text-neutral-500 text-sm leading-relaxed mb-8 flex-grow">{item.description}</p>
-          
-          <div class="flex flex-wrap gap-2 mt-auto">
-            {item.tags.map(tag => (
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-neutral-400">
-                {tag}
-              </span>
-            ))}
+      {
+        thinkingItems.map((item) => (
+          <div class="glass-card p-10 group flex flex-col hover:border-accent/50 transition-all">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-6">
+              {item.category}
+            </span>
+            <h3 class="text-2xl font-serif font-bold mb-4 group-hover:text-accent transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-neutral-500 text-sm leading-relaxed mb-8 grow">
+              {item.description}
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              {item.tags.map((tag) => (
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-neutral-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
+              <a
+                href="#"
+                class="text-xs font-bold uppercase tracking-widest text-accent flex items-center gap-2"
+              >
+                Read Insight <span>→</span>
+              </a>
+            </div>
           </div>
-          <div class="mt-8 pt-6 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
-            <a href="#" class="text-xs font-bold uppercase tracking-widest text-accent flex items-center gap-2">
-              Read Insight <span>→</span>
-            </a>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

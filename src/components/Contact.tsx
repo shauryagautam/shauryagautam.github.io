@@ -15,8 +15,8 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
-              <a 
-                href="mailto:shauryagautam139@outlook.com" 
+              <a
+                href="mailto:shauryagautam139@outlook.com"
                 className="flex items-center gap-4 text-2xl font-serif font-bold hover:text-accent transition-colors"
               >
                 <div className="w-12 h-12 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
@@ -24,7 +24,7 @@ const Contact = () => {
                 </div>
                 shauryagautam139@outlook.com
               </a>
-              
+
               <div className="flex flex-wrap gap-4 mt-8">
                 {[
                   { icon: <LinkedInIcon size={20} />, href: "https://www.linkedin.com/in/shaurya13/", label: "LinkedIn" },
@@ -52,29 +52,29 @@ const Contact = () => {
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               <div className="space-y-2">
                 <label className="text-sm font-bold uppercase tracking-widest text-neutral-400">Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="Steve Jobs"
                   className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif"
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold uppercase tracking-widest text-neutral-400">Email</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   placeholder="steve@apple.com"
                   className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif"
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold uppercase tracking-widest text-neutral-400">Message</label>
-                <textarea 
+                <textarea
                   rows={4}
                   placeholder="How can I help you?"
                   className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif resize-none"
                 />
               </div>
-              <button 
+              <button
                 className="w-full py-6 bg-neutral-950 text-white dark:bg-white dark:text-neutral-950 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
               >
                 Send Message <ArrowRight size={20} />

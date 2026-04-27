@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Dossier | Shaurya Kumar</title>
+    <!-- Premium Font for PM Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .header-top {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            z-index: 1000;
+            padding: 12px 24px;
+            border-radius: 100px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .dossier-header {
+            padding: 160px 0 60px;
+            text-align: left;
+        }
+
+        .page-title {
+            font-size: clamp(3rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .page-title span {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .dossier-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding-bottom: 120px;
+        }
+
+        .dossier-card {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .dossier-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 32px;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .card-list li {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            line-height: 1.6;
+        }
+
+        .card-list li i {
+            color: var(--primary);
+            margin-top: 6px;
+            font-size: 0.85rem;
+        }
+
+        .card-list li strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .card-link {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .card-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .dossier-card:hover .card-link i {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .dossier-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dossier-card {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+
+    <div class="liquid-bg">
+        <div class="liquid-blob blob-1"></div>
+        <div class="liquid-blob blob-2"></div>
+        <div class="liquid-blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="header-top">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </header>
+
+        <div class="dossier-header">
+            <h1 class="page-title">Technical <span>Dossier</span></h1>
+            <p class="page-subtitle">A deep-dive into product strategy, data architecture, and market economics.</p>
+        </div>
+
+        <div class="dossier-grid">
+            <!-- Product Analytics -->
+            <div class="glass-panel dossier-card">
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3 class="card-title">Product Analytics</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <span><strong>LTV/CAC Frameworks</strong>: Designing models for
+                            long-term sustainability.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Unit Economics</strong>: Analyzing
+                            cost-per-acquisition and contribution margins.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>A/B Testing</strong>: Scaling product features via
+                            hypothesis-driven experimentation.</span></li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">View Detailed Analysis <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Market Strategy -->
+            <div class="glass-panel dossier-card">
+                <div class="card-icon"
+                    style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; border-color: rgba(59, 130, 246, 0.2);">
+                    <i class="fas fa-chess-knight"></i>
+                </div>
+                <h3 class="card-title">GTM & Market Strategy</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <span><strong>GTM Strategy Development</strong>: Zero-to-one
+                            product launches in emerging markets.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Competitive Intelligence</strong>: Deep dives into
+                            OTT and Fintech landscapes.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Revenue Diversification</strong>: Creating resilient
+                            monetization roadmaps.</span></li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">Explore Frameworks <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Data Engineering -->
+            <div class="glass-panel dossier-card">
+                <div class="card-icon"
+                    style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; border-color: rgba(139, 92, 246, 0.2);">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="card-title">Data Architecture</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <span><strong>Advanced SQL</strong>: Building complex ETL pipelines
+                            and transformation layers.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Python Strategy</strong>: Automating insight
+                            generation using Pandas and NumPy.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Database Modeling</strong>: Designing scalable schema
+                            for product logging.</span></li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">Technical Documentation <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Visualization -->
+            <div class="glass-panel dossier-card">
+                <div class="card-icon"
+                    style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-color: rgba(245, 158, 11, 0.2);">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="card-title">Insight Visualization</h3>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> <span><strong>Power BI Dashboards</strong>: High-level executive
+                            reporting systems.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Storytelling via Data</strong>: Presenting technical
+                            insights to non-technical stakeholders.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Real-time Tracking</strong>: Building live monitors
+                            for core product KPIs.</span></li>
+                </ul>
+                <a href="Axis.pdf" target="_blank" class="card-link">View Portfolio <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Shaurya Kumar</title>
+    <!-- Premium Font for PM Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Blog Specific Layout --- */
+        .page-header {
+            padding: 180px 0 80px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+
+        .page-title span {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-description {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin: 0 auto;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding-bottom: 120px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 48px;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-right: 1px solid var(--glass-border);
+            padding-right: 24px;
+        }
+
+        .blog-date {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .blog-tag {
+            align-self: flex-start;
+            padding: 6px 16px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .blog-tag.purple {
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .blog-read-time {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: auto;
+            font-weight: 500;
+        }
+
+        .blog-content h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-content h2 {
+            color: var(--primary);
+        }
+
+        .blog-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .read-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .blog-card {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 32px;
+            }
+
+            .blog-meta {
+                border-right: none;
+                border-bottom: 1px solid var(--glass-border);
+                padding-right: 0;
+                padding-bottom: 24px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .blog-read-time {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+
+    <div class="liquid-bg">
+        <div class="liquid-blob blob-1"></div>
+        <div class="liquid-blob blob-2"></div>
+        <div class="liquid-blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-content">
+            <a href="index.html" class="logo">S.G.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Engineering</a></li>
+                <li><a href="blog.html" style="color: var(--primary); opacity: 1;">Blog</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Insights, Strategy & <span>Engineering</span></h1>
+            <p class="page-description">Deep dives into software architecture, scalable web frameworks, and product
+                growth strategies.</p>
+        </div>
+    </header>
+
+    <!-- Blog Posts -->
+    <section>
+        <div class="container blog-posts">
+
+            <a href="dossier.html" class="glass-panel blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">March 2026</span>
+                    <span class="blog-tag purple">Systems</span>
+                    <span class="blog-read-time">12 min read</span>
+                </div>
+                <div class="blog-content">
+                    <h2>Building Astra: A Next-Gen Go Framework</h2>
+                    <p>An architectural deep-dive into creating a 1:1 conceptual clone of AdonisJS for the Go ecosystem.
+                        Exploring the trade-offs of Dependency Injection in statically typed languages and orchestrating
+                        real-time queue workers.</p>
+                    <span class="read-more">Read Technical Dossier <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="dossier.html" class="glass-panel blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">Oct 2025</span>
+                    <span class="blog-tag">Revenue Strategy</span>
+                    <span class="blog-read-time">5 min read</span>
+                </div>
+                <div class="blog-content">
+                    <h2>The Unit Economics of Hyper-Growth</h2>
+                    <p>Deep dive into LTV:CAC optimization strategies for scaling startups in the tech ecosystem.
+                        Analyzing how micro-optimizations in pricing tiers dramatically affect customer lifetime value.
+                    </p>
+                    <span class="read-more">Read Strategy <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="dossier.html" class="glass-panel blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">Jun 2024</span>
+                    <span class="blog-tag">Market Analysis</span>
+                    <span class="blog-read-time">8 min read</span>
+                </div>
+                <div class="blog-content">
+                    <h2>OTT Monetization: Beyond Subscriptions</h2>
+                    <p>Analyzing the shift from pure subscriptions to diverse revenue streams in the OTT landscape.
+                        Identifying "Stream-to-Commerce" as the next major pivot for media platforms.</p>
+                    <span class="read-more">Read Strategy <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Shaurya Kumar | Code & Strategy</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'light') {
+                document.getElementById('theme-icon').classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+    </script>
+</body>
+
+</html>

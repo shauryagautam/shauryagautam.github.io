@@ -1,7 +1,25 @@
-import { Mail, ArrowRight } from 'lucide-react';
+import { useState, type FormEvent } from 'react';
+import { Mail, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { LinkedInIcon, GitHubIcon, XIcon, InstagramIcon, TelegramIcon } from './SocialIcons';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset after 5 seconds
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
+
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
@@ -49,37 +67,59 @@ const Contact = () => {
           </div>
 
           <div className="bg-neutral-50 dark:bg-neutral-900/50 p-12 rounded-[40px] border border-neutral-100 dark:border-neutral-800">
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-neutral-400">Name</label>
-                <input
-                  type="text"
-                  placeholder="Steve Jobs"
-                  className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif"
-                />
+            {isSubmitted ? (
+              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12 animate-fade-in">
+                <div className="w-20 h-20 bg-accent/10 text-accent rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle2 size={40} />
+                </div>
+                <h3 className="text-3xl font-serif font-bold">Message Sent!</h3>
+                <p className="text-neutral-500">
+                  Thank you for reaching out. I'll get back to you as soon as possible.
+                </p>
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-neutral-400">Email</label>
-                <input
-                  type="email"
-                  placeholder="steve@apple.com"
-                  className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-neutral-400">Message</label>
-                <textarea
-                  rows={4}
-                  placeholder="How can I help you?"
-                  className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif resize-none"
-                />
-              </div>
-              <button
-                className="w-full py-6 bg-neutral-950 text-white dark:bg-white dark:text-neutral-950 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
-              >
-                Send Message <ArrowRight size={20} />
-              </button>
-            </form>
+            ) : (
+              <form className="space-y-8" onSubmit={handleSubmit}>
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-neutral-400">Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Steve Jobs"
+                    className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-neutral-400">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="steve@apple.com"
+                    className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-neutral-400">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    required
+                    placeholder="How can I help you?"
+                    className="w-full bg-transparent border-b border-neutral-200 dark:border-neutral-800 py-4 outline-none focus:border-accent transition-colors text-xl font-serif resize-none"
+                  />
+                </div>
+                <button
+                  disabled={isSubmitting}
+                  className="w-full py-6 bg-neutral-950 text-white dark:bg-white dark:text-neutral-950 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'} <ArrowRight size={20} className={isSubmitting ? 'animate-pulse' : ''} />
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

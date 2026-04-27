@@ -58,7 +58,7 @@ const Navbar: FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="/" className="text-xl font-serif font-bold tracking-tight">
+        <a href={import.meta.env.BASE_URL || '/'} className="text-xl font-serif font-bold tracking-tight">
           Shaurya<span className="text-accent">&</span>Co.
         </a>
 

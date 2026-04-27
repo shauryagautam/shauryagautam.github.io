@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -9,7 +9,7 @@ interface CaseStudyEmbedProps {
   image?: string;
 }
 
-const CaseStudyEmbed: React.FC<CaseStudyEmbedProps> = ({ title, category, url, image }) => {
+const CaseStudyEmbed: FC<CaseStudyEmbedProps> = ({ title, category, url, image }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

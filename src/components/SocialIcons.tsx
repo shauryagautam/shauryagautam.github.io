@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 
 export interface SocialIconProps {
   size?: number;
@@ -88,7 +88,7 @@ export const TelegramIcon = ({ size = 20, className = "" }: SocialIconProps) => 
 );
 
 export interface SocialLink {
-  icon: React.ReactNode;
+  icon: ReactNode;
   href: string;
   label: string;
 }

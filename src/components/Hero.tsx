@@ -1,7 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Send } from 'lucide-react';
-import { LinkedInIcon, GitHubIcon, XIcon, InstagramIcon, TelegramIcon, SocialLinks, type SocialLink } from './SocialIcons';
+import { LinkedInIcon, GitHubIcon, XIcon, InstagramIcon, TelegramIcon, type SocialLink } from './SocialIcons';
 
 /**
  * Hero component - Main landing section with personal introduction and social links

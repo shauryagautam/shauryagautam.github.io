@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import type { FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
@@ -24,7 +25,7 @@ function cn(...inputs: ClassValue[]) {
  * - Smooth scroll navigation to sections
  * - Glassmorphic design with backdrop blur
  */
-const Navbar = () => {
+const Navbar: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();

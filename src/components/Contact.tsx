@@ -1,7 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, ArrowRight, Send } from 'lucide-react';
-import { LinkedInIcon, GitHubIcon, XIcon, InstagramIcon, TelegramIcon, SocialLinks, type SocialLink } from './SocialIcons';
+import { Mail, ArrowRight } from 'lucide-react';
+import { LinkedInIcon, GitHubIcon, XIcon, InstagramIcon, TelegramIcon } from './SocialIcons';
 
 const Contact = () => {
   return (

@@ -18,11 +18,7 @@ Object.defineProperty(window, 'matchMedia', {
   value: createMatchMedia(false),
 });
 
-// Use native localStorage but with spies
-const getItemSpy = vi.spyOn(Storage.prototype, 'getItem');
-const setItemSpy = vi.spyOn(Storage.prototype, 'setItem');
-const removeItemSpy = vi.spyOn(Storage.prototype, 'removeItem');
-const clearSpy = vi.spyOn(Storage.prototype, 'clear');
+// Use native localStorage
 
 beforeEach(() => {
   vi.clearAllMocks();

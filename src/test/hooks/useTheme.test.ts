@@ -1,4 +1,4 @@
-import { renderHook, act, waitFor } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';
 import { useTheme } from '../../hooks/useTheme';
 
 describe('useTheme', () => {

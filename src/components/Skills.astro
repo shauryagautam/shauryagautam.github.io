@@ -1,0 +1,47 @@
+---
+const skillCategories = [
+  {
+    title: "Revenue Strategy",
+    skills: ["GTM Strategy", "LTV:CAC Modeling", "Pricing Optimization", "Unit Economics", "GMV Forecasting"]
+  },
+  {
+    title: "Data Engineering",
+    skills: ["Advanced SQL", "Python (Pandas)", "Data Pipelines", "Database Arch", "Golang"]
+  },
+  {
+    title: "Product Analytics",
+    skills: ["Tableau", "Power BI", "A/B Testing", "Funnel Analysis", "Reporting"]
+  },
+  {
+    title: "Product Execution",
+    skills: ["Market-Entry Strategy", "Roadmapping", "Monetization Frameworks", "API Platforms", "Agile/Scrum"]
+  }
+];
+---
+<section id="skills" class="section-padding bg-neutral-950 text-white overflow-hidden relative">
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-accent/10 blur-[120px] -z-1" />
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="mb-20">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Expertise & Skills</h2>
+      <p class="text-neutral-400 text-lg max-w-xl">
+        A multi-disciplinary approach to product leadership, blending technical expertise with creative problem-solving.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {skillCategories.map((category) => (
+        <div>
+          <h3 class="text-xl font-bold font-serif mb-6 pb-4 border-b border-white/10">{category.title}</h3>
+          <ul class="space-y-4">
+            {category.skills.map((skill) => (
+              <li class="text-neutral-400 hover:text-white transition-colors cursor-default">
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

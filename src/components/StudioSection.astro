@@ -1,0 +1,37 @@
+---
+const industries = [
+  { name: "Travel", icon: "🏔️", focus: "Conversion & Booking Funnels" },
+  { name: "Social", icon: "📱", focus: "Engagement & Retention Loops" },
+  { name: "Hardware", icon: "⚙️", focus: "Digital Transformation" },
+  { name: "EdTech", icon: "🎓", focus: "Learning UX & Completion" }
+];
+---
+
+<section id="studio" class="section-padding bg-neutral-50/50 dark:bg-transparent border-t border-neutral-100 dark:border-neutral-800">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block">The Studio</span>
+        <h2 class="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight">Shaurya<span class="text-accent">&</span>Company</h2>
+        <div class="space-y-6 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <p>
+            Shaurya&Company is a hands-on product and growth consulting studio. We don't just provide advice; we operate as an extension of your team to solve critical product bottlenecks.
+          </p>
+          <p>
+            Whether it's optimizing a travel booking funnel in Manali or architecting a digital transformation for a hardware firm in Hathras, our focus is always on **measurable outcomes**.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {industries.map((industry) => (
+          <div class="glass-card p-8 hover:-translate-y-1 transition-transform">
+            <div class="text-3xl mb-4">{industry.icon}</div>
+            <h3 class="text-xl font-serif font-bold mb-2">{industry.name}</h3>
+            <p class="text-xs text-neutral-500 uppercase tracking-widest">{industry.focus}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

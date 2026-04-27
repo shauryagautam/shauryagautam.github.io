@@ -1,0 +1,84 @@
+---
+const experiences = [
+  {
+    role: "Founder & Chief Product Officer",
+    company: "Aarivu (Social Media Startup)",
+    period: "Jan 2026 — Present",
+    achievements: [
+      "Owning full product lifecycle: user research, roadmap, prioritization, and delivery for a 0→1 social platform.",
+      "Making high-conviction product decisions in a resource-constrained environment to drive rapid validation.",
+      "Architecting core retention loops and growth engines to redefine knowledge sharing experiences."
+    ]
+  },
+  {
+    role: "Founder & CEO",
+    company: "Shaurya&Company",
+    period: "Jan 2026 — Present",
+    achievements: [
+      "Leading a product studio focused on scaling startups across travel, social, and industrial hardware sectors.",
+      "Bridging the gap between engineering execution and commercial viability for early-stage founders."
+    ]
+  },
+  {
+    role: "Analyst (Product Strategy Focus)",
+    company: "Promist Solutions",
+    period: "Jan 2024 — Present",
+    achievements: [
+      "Redesigned product workflows for an AI recruitment platform, improving shortlisting efficiency by 25%.",
+      "Own end-to-end product strategy: defining requirements, aligning cross-functional teams, and measuring outcomes.",
+      "Developed leadership dashboards in Power BI/Tableau to drive weekly strategic decision-making.",
+      "Leading competitive research and GTM strategy across multiple product cycles in AI and data domains."
+    ]
+  },
+  {
+    role: "XRPL Campus Ambassador",
+    company: "Ripple",
+    period: "2023",
+    achievements: [
+      "Represented Ripple and XRPL ecosystem, driving awareness of blockchain technology and digital currencies.",
+      "Facilitated technical workshops and community engagement initiatives for developer growth."
+    ]
+  },
+  {
+    role: "Course Instructor",
+    company: "Self-employed",
+    period: "2018 — 2022",
+    achievements: [
+      "Educated and mentored students in technical domains, sharpening communication and leadership skills.",
+      "Developed curriculum and instructional materials for diverse learning paths."
+    ]
+  }
+];
+---
+<section id="experience" class="section-padding">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold max-w-md"> Professional Experience </h2>
+      <p class="text-lg text-neutral-500 max-w-sm">
+        A career dedicated to building scalable solutions and leading high-performing teams.
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      {experiences.map((exp) => (
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 border-t border-neutral-200 dark:border-neutral-800 pt-12">
+          <div>
+            <div class="text-sm font-bold uppercase tracking-widest text-accent mb-2">{exp.period}</div>
+            <h3 class="text-2xl font-serif font-bold">{exp.role}</h3>
+            <div class="text-lg text-neutral-500">{exp.company}</div>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              {exp.achievements.map((item) => (
+                <li class="flex gap-4">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
+                  <span class="text-lg text-neutral-600 dark:text-neutral-400">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

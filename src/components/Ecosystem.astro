@@ -1,0 +1,49 @@
+---
+const pillars = [
+  {
+    title: "Shaurya&Company",
+    role: "The Operator",
+    focus: "Product & Growth Consulting",
+    impact: "Solving real-world business bottlenecks through data and strategy.",
+    icon: "🏢"
+  },
+  {
+    title: "Astra",
+    role: "The Builder",
+    focus: "Developer Experience (DX)",
+    impact: "Empowering Golang developers with a high-performance, fullstack framework.",
+    icon: "⚡"
+  },
+  {
+    title: "Aarivu",
+    role: "The Visionary",
+    focus: "Consumer Social Platform",
+    impact: "Redefining knowledge sharing through a human-centric social engine.",
+    icon: "🌐"
+  }
+];
+---
+
+<section id="ecosystem" class="section-padding bg-neutral-950 text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-20 text-center">
+      <span class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block">The System</span>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold">Connecting the Pillars</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+      {/* Decorative connection lines (visible on desktop) */}
+      <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/10 -z-0"></div>
+      
+      {pillars.map((pillar) => (
+        <div class="relative z-10 p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:border-accent transition-all group">
+          <div class="text-4xl mb-6">{pillar.icon}</div>
+          <div class="text-xs font-bold uppercase tracking-widest text-accent mb-2">{pillar.role}</div>
+          <h3 class="text-2xl font-serif font-bold mb-4">{pillar.title}</h3>
+          <p class="text-sm text-neutral-400 font-medium mb-4">{pillar.focus}</p>
+          <p class="text-neutral-500 text-sm leading-relaxed">{pillar.impact}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

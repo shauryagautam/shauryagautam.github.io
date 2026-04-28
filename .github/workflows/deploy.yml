@@ -21,10 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 👇 THIS IS THE CRUCIAL NEW STEP YOU MUST ADD 👇
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      # 👆 IT PREVENTS GITHUB FROM BREAKING ASTRO 👆
+
+      # 👇 ADDED: Explicitly install Node 22 for Astro 👇
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1

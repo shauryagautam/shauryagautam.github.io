@@ -21,6 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 👇 THIS IS THE CRUCIAL NEW STEP YOU MUST ADD 👇
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      # 👆 IT PREVENTS GITHUB FROM BREAKING ASTRO 👆
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:

@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://shauryagautam.github.io',
-  base: '/',   // ✅ THIS IS THE FIX
+  base: '/',
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

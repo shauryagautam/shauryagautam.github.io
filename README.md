@@ -24,17 +24,17 @@ This portfolio is built to showcase a multi-domain expertise:
 
 ### 1. Install Dependencies
 ```bash
-npm install
+bun install
 ```
 
 ### 2. Start Development Server
 ```bash
-npm run dev
+bun run dev
 ```
 
 ### 3. Build for Production
 ```bash
-npm run build
+bun run build
 ```
 
 ## 📦 Deployment (GitHub Pages)

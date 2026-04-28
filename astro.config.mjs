@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://shauryagautam.github.io',
-  base: '/Portfolio',
+  base: '/',
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

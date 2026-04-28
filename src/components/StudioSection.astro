@@ -1,4 +1,6 @@
 ---
+import Pretext from "./Pretext.astro";
+
 const industries = [
   { name: "Travel", icon: "🏔️", focus: "Conversion & Booking Funnels" },
   { name: "Social", icon: "📱", focus: "Engagement & Retention Loops" },
@@ -11,7 +13,7 @@ const industries = [
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
       <div>
-        <span class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block">The Studio</span>
+        <Pretext text="The Studio" />
         <h2 class="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight">Shaurya<span class="text-accent">&</span>Company</h2>
         <div class="space-y-6 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
           <p>

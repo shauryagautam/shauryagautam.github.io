@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 
 const LiquidBackground = () => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Background base */}
-      <div className="absolute inset-0 bg-white dark:bg-neutral-950 transition-colors duration-500" />
+    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
+      {/* Background base removed to prevent covering content */}
       
       {/* Liquid Orbs */}
       <motion.div

@@ -1,0 +1,19 @@
+---
+interface Props {
+  text: string;
+  className?: string;
+  accent?: boolean;
+}
+
+const { text, className = "", accent = true } = Astro.props;
+---
+
+<span
+  class:list={[
+    "text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-6 block animate-fade-in",
+    accent ? "text-accent" : "text-neutral-400 dark:text-neutral-500",
+    className,
+  ]}
+>
+  {text}
+</span>

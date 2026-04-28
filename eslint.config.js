@@ -5,7 +5,7 @@ import reactHooksPlugin from "eslint-plugin-react-hooks";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import astroPlugin from "eslint-plugin-astro";
 
-export default tseslint.config(
+export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...astroPlugin.configs.recommended,
@@ -40,4 +40,4 @@ export default tseslint.config(
   {
     ignores: ["dist/", "node_modules/", ".astro/"],
   }
-);
+];

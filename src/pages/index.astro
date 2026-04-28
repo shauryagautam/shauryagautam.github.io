@@ -11,6 +11,8 @@ import Experience from "../components/Experience.astro";
 import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact";
 import LiquidBackground from "../components/LiquidBackground";
+import About from "../components/About.astro";
+import Pretext from "../components/Pretext.astro";
 
 const studioCaseStudies = [
   {
@@ -93,8 +95,10 @@ const articles = [
   <LiquidBackground client:load />
   <Navbar client:load />
 
-  <main>
+  <main class="relative z-10">
     <Hero client:load />
+
+    <About />
 
     <Ecosystem />
 
@@ -113,11 +117,8 @@ const articles = [
           class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
         >
           <div>
-            <span
-              class="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4 block"
-              >Consulting Track</span
-            >
-            <h2 class="text-5xl md:text-7xl font-serif font-bold">
+            <Pretext text="Consulting Track" />
+            <h2 class="text-5xl md:text-8xl font-serif font-bold text-balance">
               Studio Work
             </h2>
           </div>
@@ -140,21 +141,18 @@ const articles = [
     <!-- Product Track -->
     <section id="deep-dives" class="section-padding">
       <div class="max-w-7xl mx-auto">
+        <div class="mb-20 text-center">
+          <Pretext text="Strategic Vision" />
+          <h2 class="text-5xl md:text-7xl font-serif font-bold text-balance">Product Strategy</h2>
+        </div>
         <div
           class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
         >
           <div>
-            <span
-              class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4 block"
-              >Deep Dives</span
-            >
-            <h2 class="text-5xl md:text-7xl font-serif font-bold">
-              Product Strategy
-            </h2>
+            <p class="text-lg text-neutral-500 max-w-sm mb-2">
+              Detailed case studies and strategy documentation hosted on Notion.
+            </p>
           </div>
-          <p class="text-lg text-neutral-500 max-w-sm mb-2">
-            Detailed case studies and strategy documentation hosted on Notion.
-          </p>
         </div>
 
         <div class="space-y-24">
@@ -265,6 +263,7 @@ const articles = [
     >
       <div class="max-w-7xl mx-auto">
         <div class="mb-16">
+          <Pretext text="Quantitative Reflections" />
           <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">
             Insights
           </h2>

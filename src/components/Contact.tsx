@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
 import { Mail, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { LinkedInIcon, GitHubIcon, XIcon, InstagramIcon, TelegramIcon } from './SocialIcons';
 
@@ -6,7 +6,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     

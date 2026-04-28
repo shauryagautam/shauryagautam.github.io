@@ -1,13 +1,11 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://shauryagautam.github.io',
-  base: '/Portfolio',
+  base: '/',   // ✅ THIS IS THE FIX
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

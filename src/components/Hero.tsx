@@ -75,7 +75,7 @@ const Hero = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-8 border-white dark:border-neutral-900 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)] z-10 group/img transition-all duration-700">
                   <img 
-                    src={import.meta.env.BASE_URL + "/images/hero-profile.png"} 
+                    src={import.meta.env.BASE_URL + "images/hero-profile.png"} 
                     alt="Shaurya Kumar" 
                     className="w-full h-full object-cover scale-110 group-hover/img:scale-100 transition-transform duration-700 brightness-110 contrast-105"
                   />
